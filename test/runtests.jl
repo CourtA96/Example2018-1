@@ -7,7 +7,19 @@ using Example2018
 # 3. additive inverse
 # 4. addition commutes
 
-z = Polynomial([0])
-p = Polynomial([1,2,3])
+@testset "Polynomials form a ring" begin
 
-@test p + z == p
+	z = Polynomial([0])
+
+	for n in 1:100
+
+		deg = rand(0:100)
+		p = Polynomial(rand(-1000000:1000000, deg+1))
+
+		@test p + z == p
+		@test z + p == p
+		@test p + (-p) == z
+	end
+
+end
+
