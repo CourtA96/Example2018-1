@@ -23,3 +23,5 @@ using Example2018
 
 end
 
+# Homework: add more tests and add badge to github (appveyor.yml)
+
