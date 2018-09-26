@@ -29,6 +29,11 @@ struct Polynomial{T}
     coeffs::Vector{T}
 end
 
+export poly
+function poly(p::Polynomial)
+    true
+end
+
 export evaluate
 function evaluate(p::Polynomial, x)
     sum(c * x^(i-1) for (i,c) in enumerate(p.coeffs))
@@ -69,7 +74,5 @@ export deriv
 function deriv(p::Polynomial)
     Polynomial([(i-1) * c for (i,c) in enumerate(p.coeffs)][2:end])
 end
-
-
 
 end
